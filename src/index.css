@@ -1,0 +1,30 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    height: 10%;
+}
+
+.content{
+    display: grid;
+    height: 90%;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.title {
+    grid-row: 1;
+    grid-column: 2;
+    color: tomato;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+}
