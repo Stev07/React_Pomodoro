@@ -32,7 +32,7 @@ class Timer extends React.Component {
 
     startStop() {
           document.querySelector('.start').innerHTML == "Start" ? 
-          document.querySelector('.start').innerHTML = "Pause":
+          document.querySelector('.start').innerHTML = "Stop":
           document.querySelector('.start').innerHTML = "Start"
           setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000);
     }
