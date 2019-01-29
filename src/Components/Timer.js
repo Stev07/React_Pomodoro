@@ -10,7 +10,7 @@ class Timer extends React.Component {
       this.state = { seconds: 1500 };
       this.addTime = this.addTime.bind(this);
       this.lessTime = this.lessTime.bind(this);
-      this.start = this.start.bind(this);
+      this.startStop = this.startStop.bind(this);
       // this.tick = this.tick.bind(this);
       // this.componentDidMount = this.componentDidMount.bind(this);
     }
@@ -30,7 +30,7 @@ class Timer extends React.Component {
     //   clearInterval(this.interval);
     // }
 
-    start() {
+    startStop() {
           document.querySelector('.start').innerHTML == "Start" ? 
           document.querySelector('.start').innerHTML = "Pause":
           document.querySelector('.start').innerHTML = "Start"
@@ -77,7 +77,7 @@ class Timer extends React.Component {
           {this.convertToHhMmSs(this.state.seconds)}
           </div>
             <div className="more" onClick={this.addTime}>+</div>
-            <div className="start" onClick={this.start}>Start</div>
+            <div className="start" onClick={this.startStop}>Start</div>
             <div className="less"onClick={this.lessTime}>-</div>
         </div>
 
