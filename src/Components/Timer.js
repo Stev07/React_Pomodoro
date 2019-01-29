@@ -8,7 +8,7 @@ class Timer extends React.Component {
       super(props);
       //! Set time to 25mins
       this.state = {
-        seconds: 1500,
+        seconds: 1200,
         timerID: ""
       };
 
@@ -17,7 +17,6 @@ class Timer extends React.Component {
       this.startStop = this.startStop.bind(this);
       this.start = this.start.bind(this);
       this.stop = this.stop.bind(this);
-
 
     }
 
@@ -32,7 +31,7 @@ class Timer extends React.Component {
     stop() {
       clearInterval(this.state.timerID)
       this.setState({
-        seconds:this.state.seconds = 0
+        seconds:this.state.seconds = 1200
       })
       document.querySelector('.start').innerHTML = "Start"
             
