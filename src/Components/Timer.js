@@ -7,38 +7,46 @@ class Timer extends React.Component {
     constructor(props) {
       super(props);
       //! Set time to 25mins
-      this.state = { seconds: 1500 };
+      this.state = {
+        seconds: 1500,
+        timerID: ""
+      };
+
       this.addTime = this.addTime.bind(this);
       this.lessTime = this.lessTime.bind(this);
       this.startStop = this.startStop.bind(this);
-      // this.tick = this.tick.bind(this);
-      // this.componentDidMount = this.componentDidMount.bind(this);
+      this.start = this.start.bind(this);
+      this.stop = this.stop.bind(this);
+
+
     }
 
     
-    // tick() {
-    //   this.setState(state => ({
-    //     seconds: state.seconds - 1
-    //   }));
-    // }
-  
-    // componentDidMount() {
-    //   this.interval = setInterval(() => this.tick(), 1000);
-    // }
-  
-    // componentWillUnmount() {
-    //   clearInterval(this.interval);
-    // }
+    start(){
+      if(this.state.seconds > 0){
+        document.querySelector('.start').innerHTML = "Stop"
+      //  setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000)}
+        this.setState({timerID : setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000)})
+    }}
 
-    startStop() {
-          document.querySelector('.start').innerHTML == "Start" ? 
-          document.querySelector('.start').innerHTML = "Stop":
-          document.querySelector('.start').innerHTML = "Start"
-          setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000);
+    stop() {
+      clearInterval(this.state.timerID)
+      this.setState({
+        seconds:this.state.seconds = 0
+      })
+      document.querySelector('.start').innerHTML = "Start"
+            
     }
 
+    startStop() {
+      document.querySelector('.start').innerHTML == "Start" ? 
+        this.start() : this.stop()
+    }
+
+
+
     addTime() {
-    this.setState({ seconds: this.state.seconds + 60 });
+      this.setState({ seconds: this.state.seconds + 60 });
     }
 
     lessTime() {
@@ -54,16 +62,16 @@ class Timer extends React.Component {
       let m = Math.floor((seconds % 3600) / 60);
       let s = Math.floor((seconds % 3600) % 60);
 
-      //! add zéro if only one number
-      if(s == 0 || s == 1 || s == 2 || s == 3 || s == 4 || s == 5 || s == 6 || s == 7 || s == 8 || s == 9){
+      //! add zero if only one number
+      if(s < 10){
         s = `0${s}`
       }
 
-      if(m == 0 || m == 1 || m == 2 || m == 3 || m == 4 || m == 5 || m == 6 || m == 7 || m == 8 || m == 9){
+      if(m < 10){
         m = `0${m}`
       }
 
-      if(h == 0 || h == 1 || h == 2 || h == 3 || h == 4 || h == 5 || h == 6 || h == 7 || h == 8 || h == 9){
+      if(h < 10){ 
         h = `0${h}`
       }
 
