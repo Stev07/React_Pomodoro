@@ -6,10 +6,11 @@ import './Box.css';
 class Timer extends React.Component {
     constructor(props) {
       super(props);
-      //! Set time to 25mins
+      // Set time to 20mins
       this.state = {
-        seconds: 1200,
-        timerID: ""
+        seconds: 5,
+        timerID: null,
+        active:true
       };
 
       this.addTime = this.addTime.bind(this);
@@ -20,21 +21,51 @@ class Timer extends React.Component {
 
     }
 
-    
+
+
     start(){
-      if(this.state.seconds > 0){
-        document.querySelector('.start').innerHTML = "Stop"
-      //  setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000)}
-        this.setState({timerID : setInterval(() => {this.setState({ seconds: this.state.seconds - 1}) }, 1000)})
-    }}
+      document.querySelector('.start').innerHTML = "Stop"
+      this.setState({active:false})
+
+      if(this.state.active === false){
+        document.querySelector('.more').style.backgroundColor="black";
+      }
+
+      let count = this.setState({timerID: setInterval(()=>{
+        if(this.state.seconds>0){
+          this.setState({ seconds: this.state.seconds - 1})
+        }else{
+          clearInterval(count)
+        }
+      },1000)})
+
+    }
+
+
+    // start(){
+    //   document.querySelector('.start').innerHTML = "Stop"
+    //   let counter = this.state.seconds
+    //   let count = this.setState({timerID : setInterval(()=>{this.setState({ seconds: this.state.seconds - 1})} , 1000)})
+    //     counter--
+    //     counter = this.state.seconds
+    //     if (counter === 0) {
+    //       clearInterval(count)
+    //     }
+    //   }
+
+
+    // start(){
+    //     document.querySelector('.start').innerHTML = "Stop"
+    //     this.setState({timerID : setInterval(()=>{this.setState({ seconds: this.state.seconds - 1})} , 1000)})
+    // }
 
     stop() {
       clearInterval(this.state.timerID)
       this.setState({
-        seconds:this.state.seconds = 1200
+        seconds:this.state.seconds = 5
       })
-      document.querySelector('.start').innerHTML = "Start"
-            
+
+      document.querySelector('.start').innerHTML = "Start"   
     }
 
     startStop() {
@@ -49,7 +80,7 @@ class Timer extends React.Component {
     }
 
     lessTime() {
-      if (this.state.seconds > 0){
+      if (this.state.seconds > 59){
         this.setState({ seconds: this.state.seconds - 60 });
       }
       
