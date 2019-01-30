@@ -41,24 +41,6 @@ class Timer extends React.Component {
 
     }
 
-
-    // start(){
-    //   document.querySelector('.start').innerHTML = "Stop"
-    //   let counter = this.state.seconds
-    //   let count = this.setState({timerID : setInterval(()=>{this.setState({ seconds: this.state.seconds - 1})} , 1000)})
-    //     counter--
-    //     counter = this.state.seconds
-    //     if (counter === 0) {
-    //       clearInterval(count)
-    //     }
-    //   }
-
-
-    // start(){
-    //     document.querySelector('.start').innerHTML = "Stop"
-    //     this.setState({timerID : setInterval(()=>{this.setState({ seconds: this.state.seconds - 1})} , 1000)})
-    // }
-
     stop() {
       clearInterval(this.state.timerID)
       this.setState({
@@ -92,7 +74,7 @@ class Timer extends React.Component {
       let m = Math.floor((seconds % 3600) / 60);
       let s = Math.floor((seconds % 3600) % 60);
 
-      //! add zero if only one number
+      // add zero if only one number
       if(s < 10){
         s = `0${s}`
       }
