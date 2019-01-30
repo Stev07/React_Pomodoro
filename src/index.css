@@ -3,10 +3,16 @@
     padding:0px;
 }
 
-
-.container {
+.app{
     width: 100vw;
     height: 100vh;
+}
+.container {
+    /* width: 100vw;
+    height: 100vh; */
+    background-image: url(https://pixabay.com/get/ea37b30d2af2063ed1534705fb0938c9bd22ffd41cb5194992f7c478a7/time-3222267_1920.jpg);
+    background-size:cover;
+    border: 15px solid #eaec7e;
 }
 
 header{
@@ -24,8 +30,10 @@ header{
 .title {
     grid-row: 1;
     grid-column: 2;
-    color: tomato;
-    font-size: 40px;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    font-family: 'Anton', sans-serif;
+    color: white;
+    font-size: 4.5em;
     text-align: center;
     padding-top: 30px;
 }

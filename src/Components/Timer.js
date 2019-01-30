@@ -13,7 +13,10 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     width                 :'400px',
-    height                :'200px'
+    height                :'200px',
+    display               :'flex',
+    justifyContent        :'center',
+    alignItems            :'center'
   }
 };
 
@@ -138,9 +141,9 @@ class Timer extends React.Component {
           isOpen={this.state.showModal}
           contentLabel="Minimal Modal Example"
         > 
-          <p>Have a break ...</p>
-          <button onClick={this.handleCloseModal}>Close Modal</button>
-          <button onClick={this.restart}>Restart</button>
+          <p>Have a break ...</p><br/>
+          <button className="modalBtn" onClick={this.handleCloseModal}>Close Modal</button>
+          <button className="modalBtn" onClick={this.restart}>Restart</button>
         
         </Modal>
           <div className="time">
