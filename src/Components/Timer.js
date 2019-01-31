@@ -16,7 +16,7 @@ const customStyles = {
     height                :'200px',
     textAlign             :'center',
     border                :'6px solid #eaec7e',
-    background            :'#f8d6ac'
+    background            :'#bedfb2'
   }
 };
 
@@ -28,7 +28,7 @@ class Timer extends React.Component {
       super(props);
       // Set time to 20mins
       this.state = {
-        seconds: 5,
+        seconds: 1200,
         timerID: null,
         active:false,
         showModal: false
@@ -76,7 +76,7 @@ class Timer extends React.Component {
           clearInterval(count)
           this.openModal()
           clearInterval(this.state.timerID)
-          this.setState({seconds: this.state.seconds =5})
+          this.setState({seconds: this.state.seconds =1200})
           
         }
       },1000)})
@@ -85,7 +85,7 @@ class Timer extends React.Component {
     reset() {
       clearInterval(this.state.timerID)
       this.setState({
-        seconds:this.state.seconds = 5
+        seconds:this.state.seconds = 1200
       })
 
       document.querySelector('.start').innerHTML = "Start"
