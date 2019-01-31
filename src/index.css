@@ -4,24 +4,24 @@
 }
 
 .app{
-    width: 100vw;
-    height: 100vh;
 }
 .container {
-    /* width: 100vw;
-    height: 100vh; */
-    background-image: url(https://pixabay.com/get/ea37b30d2af2063ed1534705fb0938c9bd22ffd41cb5194992f7c478a7/time-3222267_1920.jpg);
-    background-size:cover;
-    border: 15px solid #eaec7e;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(http://visagesetcouleurs.be/BeCode/bgtime.jpg);
+    
 }
 
 header{
-    height: 10%;
+    border-right: 15px solid #eaec7e;
+    border-left: 15px solid #eaec7e;
+
 }
 
 .content{
+    border: 15px solid #eaec7e;
     display: grid;
-    height: 90%;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     text-align: center;

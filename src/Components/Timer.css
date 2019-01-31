@@ -22,7 +22,33 @@ button{
     background: #f8d6ac;
 }
 
-.modalBtn{
+h3.break{
+    font-size: 30px;
+    padding-bottom: 30px;
+    color: white;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+.modalBtn1{
     width: 200px;
     height: 70px;
+    font-weight: bold;
+    border-right:1px solid black;
 }
+
+.modalBtn2{
+    width: 200px;
+    height: 70px;
+    font-weight: bold;
+}
+
+/* .modalBtn3{
+    width: 200px;
+    height: 70px;
+    font-weight: bold;
+}
+
+.modalBtn4{
+    width: 200px;
+    height: 70px;
+    font-weight: bold;
+} */

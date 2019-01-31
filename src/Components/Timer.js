@@ -3,7 +3,7 @@ import './Timer.css';
 import './Box.css';
 import Modal from 'react-modal';
 
-
+///MODAL STYLE
 const customStyles = {
   content : {
     top                   : '50%',
@@ -14,9 +14,9 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)',
     width                 :'400px',
     height                :'200px',
-    display               :'flex',
-    justifyContent        :'center',
-    alignItems            :'center'
+    textAlign             :'center',
+    border                :'6px solid #eaec7e',
+    background            :'#f8d6ac'
   }
 };
 
@@ -39,24 +39,30 @@ class Timer extends React.Component {
       this.startReset = this.startReset.bind(this);
       this.start = this.start.bind(this);
       this.reset = this.reset.bind(this);
-      this.handleOpenModal = this.handleOpenModal.bind(this);
-      this.handleCloseModal = this.handleCloseModal.bind(this);
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
       this.restart = this.restart.bind(this);
 
     }
+    ///MODAL FUNCTIONS
 
-    handleOpenModal () {
-      this.setState({ showModal: true });
+
+    openModal() {
+      this.setState({ showModal: true })
     }
     
-    handleCloseModal () {
-      this.setState({ showModal: false });
+    closeModal() {
+      this.setState({ showModal: false })
+      document.querySelector('.start').innerHTML = "Start"
+      this.setState({active:false})
     }
 
     restart(){
-      this.handleCloseModal()
+      this.closeModal()
       this.start()
     }
+    ///
+
 
     start(){
       document.querySelector('.start').innerHTML = "Reset"
@@ -68,11 +74,10 @@ class Timer extends React.Component {
           this.setState({ seconds: this.state.seconds - 1})
         }else{
           clearInterval(count)
-          this.handleOpenModal()
+          this.openModal()
           clearInterval(this.state.timerID)
           this.setState({seconds: this.state.seconds =5})
           
-
         }
       },1000)})
     }
@@ -135,15 +140,17 @@ class Timer extends React.Component {
 
       return (
         <div className="box">
-        {/* <button onClick={this.handleOpenModal}>Trigger Modal</button> */}
+        {/* <button onClick={this.openModal}>Trigger Modal</button> */}
         <Modal
           style={customStyles}
           isOpen={this.state.showModal}
           contentLabel="Minimal Modal Example"
         > 
-          <p>Have a break ...</p><br/>
-          <button className="modalBtn" onClick={this.handleCloseModal}>Close Modal</button>
-          <button className="modalBtn" onClick={this.restart}>Restart</button>
+          <h3 class="break">Have a break ...</h3><br/>
+          <button className="modalBtn1" onClick={this.closeModal}>Close Modal</button>
+          <button className="modalBtn2" onClick={this.restart}>Restart</button>
+          {/* <button className="modalBtn3">5 mins break</button>
+          <button className="modalBtn4">30 mins break</button> */}
         
         </Modal>
           <div className="time">
