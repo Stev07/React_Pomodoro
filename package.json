@@ -6,16 +6,24 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html -d docs --public-url ./",
+    "predeploy": "rm -rf docs && parcel build index.html --public--url /parcel-gh-pages-deploy",
+    "deploy": "gh-pages -d docs",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stev07/React_Pomodoro.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://Stev07.github.io/React_Pomodoro",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.11.0"
   },
   "dependencies": {
