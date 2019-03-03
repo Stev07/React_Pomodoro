@@ -1,5 +1,5 @@
 {
-  "name": "react_pomodoro",
+  "name": "React_portfolio",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -24,13 +24,13 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "gh-pages": "^2.0.1",
-    "parcel-bundler": "^1.11.0"
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2"
   },
   "dependencies": {
     "css-loader": "^2.1.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-modal": "^3.8.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "style-loader": "^0.23.1"
   }
 }

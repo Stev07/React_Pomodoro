@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+header {
+  height: 8%;
+
+  nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    font-weight: bold;
+
+    li{
+        margin: 0px 15px;
+        a{
+          text-decoration: none;
+          color:white;
+          transition: 0.4s;
+          &:hover{
+            color:#46a4d7;
+          }
+        }
+    }
+
+    .active{
+      color:#46a4d7;
+    }
+
+
+    
+  }
+}
